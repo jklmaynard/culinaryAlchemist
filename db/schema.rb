@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407180210) do
+ActiveRecord::Schema.define(version: 20150407183420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "categories_recipes", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "category_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -30,8 +35,14 @@ ActiveRecord::Schema.define(version: 20150407180210) do
     t.boolean "pinch",      default: false
   end
 
+  create_table "ingredients_recipes", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "ingredient_id"
+  end
+
   create_table "notes", force: :cascade do |t|
-    t.text "body"
+    t.text    "body"
+    t.integer "recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -39,16 +50,6 @@ ActiveRecord::Schema.define(version: 20150407180210) do
     t.integer "cooktime"
     t.text    "instructions"
     t.string  "pairings"
-  end
-
-  create_table "recipes_categories", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "category_id"
-  end
-
-  create_table "recipes_ingredients", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "ingredient_id"
   end
 
 end
