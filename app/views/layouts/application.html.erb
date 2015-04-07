@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='culinaryAlchemist'>
 <head>
   <title>CulinaryAlchemist</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div ng-view>
   <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>.
     <%= link_to 'Edit profile', edit_user_registration_path %> |
@@ -20,8 +21,10 @@
     <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
+    <%= yield %>
+    
+</div>
 
-<%= yield %>
 
 </body>
 </html>
