@@ -11,9 +11,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'angular-rails-templates'
-gem 'bower-rails'
 gem 'pivotal_git_scripts'
-
+gem 'addressable'
 
 group :development, :test do
   gem 'byebug'
@@ -21,7 +20,6 @@ group :development, :test do
   gem 'spring'
   gem 'pry'
   gem 'quiet_assets'
-  gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'faker'
@@ -29,6 +27,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rspec-rails', '~> 2.14.0'
   gem 'shoulda-matchers'
   gem 'factory_girl'
 end
