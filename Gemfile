@@ -21,6 +21,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :test do
