@@ -1,43 +1,109 @@
 h1 {
-
+  font-family: Times, Helvetica;
 }
 
 h2 {
-
+  font-family: Times, Helvetica;
 }
 
 h3 {
-
+  font-family: Times, Helvetica;
 }
 
 h4 {
-
+  font-family: Times, Helvetica;
 }
 
 h5 {
-
+  font-family: Times, Helvetica;
 }
 
 h6 {
+  font-family: Times, Helvetica;
+}
 
+a:active {
+  color: #A1A9A1;
+}
+
+a:hover {
+  color: #FF9900;
+}
+
+a:link {
+  color: #7FCB7F;
+  text-decoration: none;
 }
 
 body {
-
+  background-color: #EBF5EB;
 }
 
 li {
 
 }
 
-a:active {
-
+.actions {
+  padding: 5px;
 }
 
-a:hover {
-
+.btn {
+  border: 1px solid #202220;
+  border-radius: 10px;
 }
 
-a:link {
-  
+.btn:hover {
+  background-color: #FF9933;
+  border: 1px solid #202220;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.field {
+  padding: 5px;
+}
+
+.field-remember-me {
+  font-family: Verdana, Helvetica;
+  color: #FFFFFF;
+  font-size: 80%;
+  padding: 5px;
+}
+
+.login-form {
+  background-color: #A1A9A1;
+  border: 2px solid #A1A9A1;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.render-link {
+  padding: 20px;
+}
+
+.signup-form {
+  background-color: #99C2C2;
+  border: 2px solid #99C2C2;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+#user_email {
+  border: 1px solid #202220;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+#user_password {
+  border: 1px solid #202220;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+#user_password_confirmation {
+  border: 1px solid #202220;
+  border-radius: 10px;
+  padding: 3px;
 }
