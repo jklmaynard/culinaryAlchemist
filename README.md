@@ -22,12 +22,12 @@ Open a Web browser. Navigate to *localhost:3000*.
 Authors
 ------
 
-Heather Anderson
-Crystal Contreras-Grossman
-Karvari Ellingson
-Alister Fenix
-James Maynard
-Julie Turner
+- Heather Anderson
+- Crystal Contreras-Grossman
+- Karvari Ellingson
+- Alister Fenix
+- James Maynard
+- Julie Turner
 
 
 License
