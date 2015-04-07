@@ -9,9 +9,11 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
+
 gem 'angular-rails-templates'
 gem 'bower-rails'
 gem 'pivotal_git_scripts'
+
 
 group :development, :test do
   gem 'byebug'
@@ -21,11 +23,12 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'faker'
+  gem 'capybara'
 end
 
 group :test do
   gem 'shoulda-matchers'
-  gem 'faker'
-  gem 'capybara'
   gem 'factory_girl'
 end
