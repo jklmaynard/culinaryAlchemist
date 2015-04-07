@@ -6,12 +6,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
-gem 'pivotal_git_scripts'
 
+gem 'angular-rails-templates'
+gem 'bower-rails'
+gem 'pivotal_git_scripts'
 
 
 group :development, :test do
@@ -22,6 +23,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 group :test do
