@@ -17,6 +17,20 @@ Bundler.require(*Rails.groups)
 
 module CulinaryAlchemist
   class Application < Rails::Application
+    
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
+    # Enable escaping HTML in JSON.
+    config.active_support.escape_html_entities_in_json = true
+
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
+
+    config.active_record.schema_format = :ruby
+
+    I18n.config.enforce_available_locales = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
