@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408185819) do
+ActiveRecord::Schema.define(version: 20150408212440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150408185819) do
     t.string "ingredient"
   end
 
-  create_table "measurement_tables", force: :cascade do |t|
+  create_table "measurements", force: :cascade do |t|
     t.integer "measurement"
   end
 
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150408185819) do
     t.integer "measurement_id"
   end
 
-  create_table "mixes_recipes_tables", force: :cascade do |t|
+  create_table "mixes_recipes", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "mix_id"
   end

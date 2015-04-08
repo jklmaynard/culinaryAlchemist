@@ -9,7 +9,7 @@ describe "add the user process" do
     expect(page).to have_content "You have signed up successfully."
   end
 
-  it "logs the user in" do
+  pending "logs the user in" do
     user
     sign_in(user)
     expect(page).to have_content "Signed in successfully."
