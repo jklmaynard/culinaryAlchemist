@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407192933) do
+ActiveRecord::Schema.define(version: 20150408212440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,18 +26,22 @@ ActiveRecord::Schema.define(version: 20150407192933) do
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string  "ingredient"
-    t.boolean "pint",       default: false
-    t.boolean "cup",        default: false
-    t.boolean "half_cup",   default: false
-    t.boolean "tablespoon", default: false
-    t.boolean "teaspoon",   default: false
-    t.boolean "pinch",      default: false
+    t.string "ingredient"
   end
 
-  create_table "ingredients_recipes", force: :cascade do |t|
-    t.integer "recipe_id"
+  create_table "measurements", force: :cascade do |t|
+    t.integer "measurement"
+  end
+
+  create_table "mixes", force: :cascade do |t|
     t.integer "ingredient_id"
+    t.integer "quantity"
+    t.integer "measurement_id"
+  end
+
+  create_table "mixes_recipes", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "mix_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -46,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150407192933) do
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string  "name"
-    t.integer "cooktime"
-    t.text    "instructions"
-    t.string  "pairings"
+    t.string "name"
+    t.string "pairings"
+    t.text   "description"
+    t.text   "preparation"
   end
 
   create_table "users", force: :cascade do |t|
