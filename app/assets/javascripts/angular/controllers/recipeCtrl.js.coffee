@@ -1,3 +1,3 @@
 @culinaryAlchemist.controller "RecipeCtrl", ['$scope', ($scope) ->
-  $scope.foo = "bar"
+  $scope.foo = "recipe"
 ]

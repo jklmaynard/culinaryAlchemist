@@ -11,7 +11,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'angular-rails-templates'
 gem 'pivotal_git_scripts'
-gem 'addressable'
 
 group :development, :test do
   gem 'byebug'
@@ -24,6 +23,7 @@ group :development, :test do
   gem 'faker'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'addressable'
   gem 'rspec-rails'
 end
 
