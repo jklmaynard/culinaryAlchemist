@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require "rails"
+require "rails/all"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -17,7 +18,7 @@ Bundler.require(*Rails.groups)
 
 module CulinaryAlchemist
   class Application < Rails::Application
-    
+
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     # Enable escaping HTML in JSON.
@@ -45,5 +46,6 @@ module CulinaryAlchemist
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.assets.enable = true
   end
 end
