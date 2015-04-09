@@ -1,7 +1,7 @@
-function RecordCtrl($scope, Session, Records) {"use strict";
+function RecipeCtrl($scope, Session, Recipes) {"use strict";
 
   $scope.user = Session.requestCurrentUser();
-  $scope.records = Records.index();
+  $scope.recipes = Recipes.index();
 
   $scope.logout = function() {
     Session.logout();

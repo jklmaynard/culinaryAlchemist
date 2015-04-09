@@ -1,19 +1,20 @@
-class Api::V1::RecordController < Api::V1::BaseController
+class Api::V1::RecipeController < Api::V1::BaseController
   before_filter :authenticate_user!
 
   def index
-    respond_with(Record.all)
+    respond_with(Recipe.all)
   end
 
   def show
-    @data = Record.find(params[:id]).to_json()
+    render :json => {:info => "Current User", :user => current_user}, :status => 200
+    @data = Recipe.find(params[:id]).to_json()
     respond_with(@data)
   end
 
   def update
-    @data = Record.find(params[:id])
+    @data = Recipe.find(params[:id])
     respond_to do |format|
-      if @data.update_attributes(record_params)
+      if @data.update_attributes(recipe_params)
         format.json { head :no_content }
       else
         format.json { render json: @data.errors, status: :unprocessable_entity }
@@ -22,13 +23,13 @@ class Api::V1::RecordController < Api::V1::BaseController
   end
 
   def create
-    @data = Record.create(record_params)
+    @data = Recipe.create(recipe_params)
     @data.save
     respond_with(@data)
   end
 
   def destroy
-    @data = Record.find(params[:id])
+    @data = Recipe.find(params[:id])
     @data.destroy
     respond_to do |format|
       format.json  { head :ok }
@@ -37,7 +38,7 @@ class Api::V1::RecordController < Api::V1::BaseController
 
   private
 
-  def record_params
-    params.require(:record).permit(:secure)
+  def recipe_params
+    params.require(:recipe).permit(:secure)
   end
 end
