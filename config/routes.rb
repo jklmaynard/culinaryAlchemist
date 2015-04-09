@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       end
 
       resources :record
+      resources :ingredients
 
       resources :users, only: [:create]
       match '/users' => 'users#show', :via => :get
