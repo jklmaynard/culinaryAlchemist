@@ -7,6 +7,7 @@ Rails.application.routes.draw do
  resources :home, only: [:index]
   root :to => "home#index"
   devise_for :users
+  resources :notes, except: [:index, :update]
 
   namespace :api, defaults: {format: :json} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do

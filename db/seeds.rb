@@ -24,6 +24,6 @@ Recipe.create([
 
 Note.create([
   { body: "Yummy!" }
-  { body: "Too much salt: you trying to kill your grandmother??" }
+  { body: "Too much salt: you TRYing to kill your grandmother??" }
   { body: "I hate kale." }
 ])

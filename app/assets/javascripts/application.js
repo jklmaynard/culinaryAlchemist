@@ -22,8 +22,9 @@
 //= require controllers/app
 //= require controllers/record
 //= require controllers/users
+//= require controllers/notes
 
-angular.module('culinaryAlchemist', ['sessionService','recordService'])
+angular.module('culinaryAlchemist', ['sessionService','recordService', 'noteService'])
   .config(['$httpProvider', function($httpProvider){
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
@@ -50,7 +51,7 @@ angular.module('culinaryAlchemist', ['sessionService','recordService'])
   .config(['$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {templateUrl:'/home/index.html'})
-      .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl})
-      .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl})
+      .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl});
+      .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl});
       .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
   }]);

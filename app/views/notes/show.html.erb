@@ -1,9 +1,7 @@
 <div class="container", ng-app="notesApp">
-  <script>
-    <%= render "notes_service.js.erb" %>
-  </script>
+  <script href="_note_service.js.erb"></script>
 
-  <div ng-controller="notesController">
+  <div ng-controller="notesCtrl">
     <h4> {{note.body}} </h4>
   </div>
 </div>

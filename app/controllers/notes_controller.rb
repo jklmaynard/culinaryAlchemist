@@ -1,12 +1,10 @@
 class NotesController < ApplicationController
 
-  def index
-    @notes = Note.all
-    render @notes, as: :json
-  end
+respond_to :html, :json
 
   def show
-    @item = Item.find(params[:id])
+    @note = Note.find(params[:id]).to_json()
+    respond_with(@note)
   end
 
   def new
