@@ -1,3 +1,5 @@
+in assets/javascripts/application.js
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -18,12 +20,14 @@
 //= require_tree .
 //= require jquery.min
 //= require services/sessionService
+//= require services/recordService
 //= require services/recipeService
 //= require controllers/app
+//= require controllers/record
 //= require controllers/recipe
 //= require controllers/users
 
-angular.module('culinaryAlchemist', ['sessionService', 'recipeService'])
+angular.module('culinaryAlchemist', ['sessionService','recordService', 'recipeService'])
   .config(['$httpProvider', function($httpProvider){
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
@@ -50,6 +54,7 @@ angular.module('culinaryAlchemist', ['sessionService', 'recipeService'])
   .config(['$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {templateUrl:'/home/index.html'})
+      .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl})
       .when('/recipe', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
       .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl})
       .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
