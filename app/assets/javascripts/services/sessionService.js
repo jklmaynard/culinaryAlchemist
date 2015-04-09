@@ -12,7 +12,7 @@ angular.module('sessionService', [])
                         service.currentUser = response.data.user;
                         if (service.isAuthenticated()) {
                             //$location.path(response.data.redirect);
-                            $location.path('/record');
+                            $location.path('/recipe');
                         }
                     });
             },
@@ -30,7 +30,7 @@ angular.module('sessionService', [])
                 .then(function(response) {
                     service.currentUser = response.data;
                     if (service.isAuthenticated()) {
-                        $location.path('/record');
+                        $location.path('/recipe');
                     }
                 });
             },

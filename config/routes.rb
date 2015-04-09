@@ -16,8 +16,9 @@ Rails.application.routes.draw do
         match '/sessions' => 'sessions#destroy', :via => :delete
       end
 
-      resources :record
+
       resources :ingredients
+      resources :recipe
 
       resources :users, only: [:create]
       match '/users' => 'users#show', :via => :get

@@ -5,19 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create([
-  { email: "Bob" },
-  { email: "Sandra" },
-  { email: "Brent" },
-  { email: "Naomi Campbell" },
-  { email: "Tony" },
-])
 
 
-Recipe.create([
-  { name: "The French Baguette" },
-  { name: "Cheeze soup" },
-  { name: "Brownies" },
-  { name: "Nachos" },
-  { name: "Taco" },
-])
+
+recipes = Recipe.create([{ name: "Spaghetti", pairings: "fruity merlot", description: "boiled noodles in tomato based sauce with cheese", preparation: "boil noodles til al dente, pour sauce out of jar into sacepan, heat sauce til hot, put noodles on plate, pour sauce on noodles, shake cheese on top."}, { name: "pb&j", pairings: "koolaid", description: "gross", preparation: "smash peanut butter on a slice of bread, cover in jelly, cover with more bread."}])

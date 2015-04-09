@@ -18,14 +18,15 @@
 //= require_tree .
 //= require jquery.min
 //= require services/sessionService
-//= require services/recordService
 //= require services/ingredientService
+//= require services/recipeService
 //= require controllers/app
-//= require controllers/record
+//= require controllers/recipe
 //= require controllers/users
 //= require controllers/ingredient
 
-angular.module('culinaryAlchemist', ['sessionService','recordService', 'ingredientService'])
+
+angular.module('culinaryAlchemist', ['sessionService', 'recipeService', 'ingredientService'])
   .config(['$httpProvider', function($httpProvider){
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
@@ -52,8 +53,8 @@ angular.module('culinaryAlchemist', ['sessionService','recordService', 'ingredie
   .config(['$routeProvider', function($routeProvider){
     $routeProvider
       .when('/', {templateUrl:'/home/index.html'})
-      .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl})
       .when('/ingredients', {templateUrl:'/ingredient/index.html', controller:IngredientCtrl})
-      .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl})
-      .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
+      .when('/recipe', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
+      .when('/users/sign_in', {templateUrl:'/users/login.html', controller:UsersCtrl})
+      .when('/users/sign_up', {templateUrl:'/users/register.html', controller:UsersCtrl});
   }]);
