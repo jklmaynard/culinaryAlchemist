@@ -51,6 +51,6 @@ angular.module('culinaryAlchemist', ['sessionService', 'recipeService'])
     $routeProvider
       .when('/', {templateUrl:'/home/index.html'})
       .when('/recipe', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
-      .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl})
-      .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
+      .when('/users/sign_in', {templateUrl:'/users/login.html', controller:UsersCtrl})
+      .when('/users/sign_up', {templateUrl:'/users/register.html', controller:UsersCtrl});
   }]);

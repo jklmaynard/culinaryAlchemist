@@ -6,6 +6,7 @@ class Api::V1::RecipeController < Api::V1::BaseController
   end
 
   def show
+    render :json => {:info => "Current User", :user => current_user}, :status => 200
     @data = Recipe.find(params[:id]).to_json()
     respond_with(@data)
   end
