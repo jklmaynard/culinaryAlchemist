@@ -16,19 +16,14 @@
 //= require main
 //= require-rails-templates
 //= require_tree .
-
 //= require jquery.min
-//= require suggest.min
-//= require bootstrap.min
-//= require angular-strap.min
-//= require angular-resource
 //= require services/sessionService
 //= require services/recordService
 //= require controllers/app
 //= require controllers/record
 //= require controllers/users
 
-angular.module('culinaryAlchemist', ['sessionService','recordService','$strap.directives'])
+angular.module('culinaryAlchemist', ['sessionService','recordService'])
   .config(['$httpProvider', function($httpProvider){
         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
@@ -50,7 +45,7 @@ angular.module('culinaryAlchemist', ['sessionService','recordService','$strap.di
                 return promise.then(success, error);
             };
         }];
-        $httpProvider.responseInterceptors.push(interceptor);
+        $httpProvider.interceptors.push(interceptor);
   }])
   .config(['$routeProvider', function($routeProvider){
     $routeProvider

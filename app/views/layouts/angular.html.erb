@@ -9,20 +9,24 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
+
     <div class="navbar">
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="#">Culinary Alchemist</a>
           <div class="navbar-content">
-            <ul class="nav  pull-right"></ul>
+            <ul class="nav pull-right"></ul>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container-narrow">
-        <%= bootstrap_flash %>
-        <%= yield %>
+        <div ng-view>
+          <%= yield %>
+        </div>
     </div>
+
+    <%= javascript_include_tag "application" %>
 </body>
 </html>
