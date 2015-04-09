@@ -5,6 +5,10 @@ class NotesController < ApplicationController
     render @notes, as: :json
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def new
     @note = Note.new
   end

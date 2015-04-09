@@ -21,3 +21,9 @@ Recipe.create([
   { name: "Nachos" },
   { name: "Taco" },
 ])
+
+Note.create([
+  { body: "Yummy!" }
+  { body: "Too much salt: you trying to kill your grandmother??" }
+  { body: "I hate kale." }
+])
