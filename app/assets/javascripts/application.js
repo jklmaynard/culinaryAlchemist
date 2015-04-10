@@ -13,46 +13,39 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-resource
 //= require main
 //= require-rails-templates
 //= require_tree .
 //= require jquery.min
 //= require services/sessionService
-//= require services/recordService
+//= require services/noteService
 //= require controllers/app
-//= require controllers/record
 //= require controllers/users
 //= require controllers/note
 
-angular.module('culinaryAlchemist', ['sessionService','recordService', 'noteService'])
-  .config(['$httpProvider', function($httpProvider){
-        $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
-
-        var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
-            function success(response) {
-                return response
-            };
-
-            function error(response) {
-                if (response.status == 401) {
-                    $rootScope.$broadcast('event:unauthorized');
-                    $location.path('/users/login');
-                    return response;
-                };
-                return $q.reject(response);
-            };
-
-            return function(promise) {
-                return promise.then(success, error);
-            };
-        }];
-        $httpProvider.interceptors.push(interceptor);
-  }])
-  .config(['$routeProvider', function($routeProvider){
-    $routeProvider
-      .when('/', {templateUrl:'/home/index.html'})
-      .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl});
-      .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl});
-      .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
-      .when('/notes'), {templateUrl:'notes/index.html', controller:NotesCtrl}
-  }]);
+// angular.module('culinaryAlchemist', ['sessionService', 'noteService'])
+//   .config(['$httpProvider', function($httpProvider){
+//         $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+//
+//         var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
+//             function success(response) {
+//                 return response
+//             };
+//
+//             function error(response) {
+//                 if (response.status == 401) {
+//                     $rootScope.$broadcast('event:unauthorized');
+//                     $location.path('/users/login');
+//                     return response;
+//                 };
+//                 return $q.reject(response);
+//             };
+//
+//             return function(promise) {
+//                 return promise.then(success, error);
+//             };
+//         }];
+//         $httpProvider.interceptors.push(interceptor);
+//   }])
+//

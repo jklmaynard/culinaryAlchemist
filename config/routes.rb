@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # root :to => "static_pages#index"
-  #
-  # devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
-  # resources :users, only: :show
-  # resources :recipes
  resources :home, only: [:index]
   root :to => "home#index"
   devise_for :users
@@ -16,7 +11,6 @@ Rails.application.routes.draw do
         match '/sessions' => 'sessions#destroy', :via => :delete
       end
 
-      resources :record
       resources :notes
 
       resources :users, only: [:create]
