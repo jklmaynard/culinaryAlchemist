@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 h1 {
   font-family: Times, Helvetica;
 }
@@ -11,6 +8,8 @@ h2 {
 
 h3 {
   font-family: Times, Helvetica;
+  padding-left: 15px;
+  color: orange;
 }
 
 h4 {
@@ -25,8 +24,18 @@ h6 {
   font-family: Times, Helvetica;
 }
 
+.navbar-content {
+  float: right;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+
 a:active {
   color: #A1A9A1;
+}
+
+.brand {
+  color: #FF9900;
 }
 
 a:hover {
@@ -34,12 +43,16 @@ a:hover {
 }
 
 a:link {
-  color: #7FCB7F;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
 body {
-  background-color: #FFFFFA;
+  background: url(http://variousrecipes.com/wp-content/uploads/2014/11/homecookrecipes.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: 10px;
 }
 
@@ -52,14 +65,11 @@ li {
 }
 
 .btn {
-  border: 1px solid #202220;
-  border-radius: 10px;
+  color: #ffffff;
+  background-color: #594F4F;
 }
 
 .btn:hover {
-  background-color: #663300;
-  border: 1px solid #202220;
-  border-radius: 10px;
   font-weight: bold;
 }
 
@@ -98,6 +108,11 @@ ul {
   padding: 10px;
 }
 
+#navbar {
+  padding: 10px;
+  opacity: 0.85;
+}
+
 #user_email {
   border: 1px solid #202220;
   border-radius: 10px;
@@ -116,28 +131,16 @@ ul {
   padding: 3px;
 }
 
-
-/* Custom container */
-.container-narrow {
-    margin: 0 auto;
-    max-width: 800px;
-}
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
 /* Main marketing message and sign up button */
 .jumbotron {
     margin: 60px 0;
+    border-radius: 3px;
     text-align: center;
+    opacity: 0.85;
 }
 .jumbotron h1 {
     font-size: 72px;
     line-height: 1;
-}
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
 }
 
 /* Supporting marketing content */
