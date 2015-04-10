@@ -1,5 +1,5 @@
-function notesCtrl ($scope) {
-  $scope.note = initializer;
-}
+function NoteCtrl($scope, Session, Notes) {"use strict";
 
-notesController.$inject = ['$scope', 'notesCtrl']
+  $scope.notes = Notes.index();
+
+}

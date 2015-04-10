@@ -1,9 +1,11 @@
-class NotesController < ApplicationController
+class Api::V1::NotesController < Api::V1::BaseController
 
-respond_to :html, :json
+  def index
+    respond_with(Note.all)
+  end
 
   def show
-    @note = Note.find(params[:id]).to_json()
+    @note = Note.find(params[:id])
     respond_with(@note)
   end
 

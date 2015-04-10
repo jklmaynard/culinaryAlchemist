@@ -7,7 +7,6 @@ Rails.application.routes.draw do
  resources :home, only: [:index]
   root :to => "home#index"
   devise_for :users
-  resources :notes, except: [:index, :update]
 
   namespace :api, defaults: {format: :json} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
@@ -18,6 +17,7 @@ Rails.application.routes.draw do
       end
 
       resources :record
+      resources :notes
 
       resources :users, only: [:create]
       match '/users' => 'users#show', :via => :get

@@ -22,7 +22,7 @@
 //= require controllers/app
 //= require controllers/record
 //= require controllers/users
-//= require controllers/notes
+//= require controllers/note
 
 angular.module('culinaryAlchemist', ['sessionService','recordService', 'noteService'])
   .config(['$httpProvider', function($httpProvider){
@@ -54,4 +54,5 @@ angular.module('culinaryAlchemist', ['sessionService','recordService', 'noteServ
       .when('/record', {templateUrl:'/record/index.html', controller:RecordCtrl});
       .when('/users/login', {templateUrl:'/users/login.html', controller:UsersCtrl});
       .when('/users/register', {templateUrl:'/users/register.html', controller:UsersCtrl});
+      .when('/notes'), {templateUrl:'notes/index.html', controller:NotesCtrl}
   }]);
