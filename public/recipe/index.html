@@ -1,5 +1,11 @@
 <p>Welcome, {{user.email}}</p>
 
-<p ng-repeat="recipe in recipes">{{recipes}}</p>
+<div id="recipe list">
+  <if recipe.recipes.any?>
+    <p ng-repeat="recipe in recipes">{{recipe.name}}</p>
+  <else>
+    <p>You have not entered any recipes yet. Click below to get started!</p>
+  <end>
+</div>
 
-<a class="btn btn-primary" ng-click="logout()">Log Out</a>
+<a class="btn btn-md btn-link" href="/api/recipe/new">Add a recipe</a>

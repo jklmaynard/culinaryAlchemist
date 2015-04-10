@@ -21,9 +21,9 @@
 //= require services/ingredientService
 //= require services/recipeService
 //= require controllers/app
+//= require controllers/ingredient
 //= require controllers/recipe
 //= require controllers/users
-//= require controllers/ingredient
 
 
 angular.module('culinaryAlchemist', ['sessionService', 'recipeService', 'ingredientService'])
@@ -54,7 +54,7 @@ angular.module('culinaryAlchemist', ['sessionService', 'recipeService', 'ingredi
     $routeProvider
       .when('/', {templateUrl:'/home/index.html'})
       .when('/ingredients', {templateUrl:'/ingredient/index.html', controller:IngredientCtrl})
-      .when('/recipe', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
+      .when('/recipes', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
       .when('/users/sign_in', {templateUrl:'/users/login.html', controller:UsersCtrl})
       .when('/users/sign_up', {templateUrl:'/users/register.html', controller:UsersCtrl});
   }]);
