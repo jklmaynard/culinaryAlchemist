@@ -1,5 +1,8 @@
-<p>Welcome, {{user.email}}</p>
+<div ng-controller="RecipeCtrl">
 
-<p ng-repeat="recipe in recipes">{{recipes}}</p>
+  <p>Welcome, {{user.email}}</p>
 
-<a class="btn btn-primary" ng-click="logout()">Log Out</a>
+  <p ng-repeat="recipe in recipes">{{recipe.name}}</p>
+
+  <a class="btn btn-primary" ng-click="logout()">Log Out</a>
+</div>
