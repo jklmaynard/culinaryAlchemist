@@ -229,6 +229,7 @@ DEPENDENCIES
   addressable
   angular-rails-templates
   angular_rails_csrf
+  bootstrap-sass (~> 3.3.4.1)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
