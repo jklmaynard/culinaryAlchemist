@@ -5,20 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Culinary Alchemist</title>
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <%= stylesheet_link_tag "application", :media => "all" %> -->
     <%= csrf_meta_tags %>
   </head>
   <body>
 
     <div class="container-fluid">
       <div id="navbar">
-        <div class="navbar navbar-inverse" role="navigation">
-          <a class="brand" href="#">Culinary Alchemist</a>
+        <div class="navbar navbar-default" role="navigation">
+          <h3><a class="brand" href="#">Culinary Alchemist</a></h3>
           <div class="navbar-content">
-            <ul class="nav navbar-nav navbar-right">
-              <a class="btn btn-md btn-default" ng-href="#/users/sign_in">Log In</a>
-              <a class='btn btn-md btn-default' ng-href="#/users/sign_up">Sign Up</a>
-            </ul>
+            <a class="btn btn-md btn-default" ng-href="#/users/sign_in">Log In</a>
+            <a class='btn btn-md btn-default' ng-href="#/users/sign_up">Sign Up</a>
           </div>
         </div>
       </div>

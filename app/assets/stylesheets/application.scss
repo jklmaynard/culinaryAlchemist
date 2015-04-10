@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 h1 {
   font-family: Times, Helvetica;
 }
@@ -36,8 +39,8 @@ a:link {
 }
 
 body {
-  background-color: #EBF5EB;
-  padding-bottom: 40px;
+  background-color: #FFFFFA;
+  padding: 10px;
 }
 
 li {
@@ -54,7 +57,7 @@ li {
 }
 
 .btn:hover {
-  background-color: #FF9933;
+  background-color: #663300;
   border: 1px solid #202220;
   border-radius: 10px;
   font-weight: bold;
@@ -89,6 +92,10 @@ li {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
+}
+
+ul {
+  padding: 10px;
 }
 
 #user_email {
