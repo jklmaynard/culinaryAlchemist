@@ -228,7 +228,6 @@ PLATFORMS
 DEPENDENCIES
   addressable
   angular-rails-templates
-  bootstrap-sass (~> 3.3.4.1)
   angular_rails_csrf
   byebug
   capybara
