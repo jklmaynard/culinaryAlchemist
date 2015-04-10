@@ -11,7 +11,7 @@ Rails.application.routes.draw do
         match '/sessions' => 'sessions#destroy', :via => :delete
       end
 
-
+      resources :notes
       resources :ingredients
       resources :recipes
 

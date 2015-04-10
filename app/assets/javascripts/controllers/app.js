@@ -8,4 +8,8 @@ culinaryAlchemist.controller('AppCtrl', function ($scope, Session) {"use strict"
     console.log('authenticated');
   });
 
+  $scope.logout = function() {
+    Session.logout();
+  };
+
 });

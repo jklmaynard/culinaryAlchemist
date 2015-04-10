@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'angular-rails-templates'
 gem 'pivotal_git_scripts'
+gem 'angular_rails_csrf'
 
 group :development, :test do
   gem 'byebug'
