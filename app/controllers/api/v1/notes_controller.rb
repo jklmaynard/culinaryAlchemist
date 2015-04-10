@@ -1,12 +1,12 @@
 class Api::V1::NotesController < Api::V1::BaseController
 
   def index
-    respond_with(Note.all)
+    @notes = Note.all
+    respond_with(@notes)
   end
 
   def show
-    @note = Note.find(params[:id])
-    respond_with(@note)
+    respond_with Note.find(params[:id])
   end
 
   def new

@@ -9,6 +9,10 @@ angular.module('culinaryAlchemist').config(['$routeProvider', function($routePro
       templateUrl:'/notes/index.html',
       controller: 'NoteCtrl'
     })
+    .when('/notes/:id', {
+      templateUrl:'/notes/show.html',
+      controller: 'NoteCtrl'
+    })
     .when('/users/login', {
       templateUrl:'/users/login.html',
       controller: 'UsersCtrl'

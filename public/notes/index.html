@@ -3,8 +3,6 @@
 <h3>Notes</h3>
 
 <p ng-repeat="note in notes">
-
-
-  {{note.body}}
+  <a href="#/notes/{{note.id}}">{{note.body}}</a>
 </p>
 </div>
