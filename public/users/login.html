@@ -7,11 +7,11 @@
     <div class="alert alert-error" ng-show="authError">
         {{authError}}
     </div>
-    <input type="text" class="input-block-level" placeholder="Email address" ng-model="user.email" required autofocus>
+    <input type="text" class="input-block-level" placeholder="Email Address" ng-model="user.email" required autofocus>
     <input type="password" class="input-block-level" placeholder="Password" ng-model="user.password" required>
     <label class="checkbox">
         <input type="checkbox" value="remember-me"> Remember me
     </label><br/>
     <a class="btn btn-large btn-primary" type="submit" ng-click="login(user)" ng-disabled="loginForm.$invalid">Sign in</a>
-    <a class="btn btn-link" href="#/users/register">Register</a>
+    <a class="btn btn-link" href="#/users/sign_up">Register</a>
 </form>

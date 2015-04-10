@@ -7,14 +7,13 @@ FactoryGirl.define do
 
   factory(:recipe) do
     name("chicken soup")
-    cooktime(20)
-    instructions { Faker::Lorem.sentence(rand(2..10)).chomp('.') }
+    description("yummy")
+    preperation { Faker::Lorem.sentence(rand(2..10)).chomp('.') }
     pairings("wine")
   end
 
   factory(:ingredient) do
     ingredient("broth")
-    pint(true)
   end
 
   factory(:note) do
