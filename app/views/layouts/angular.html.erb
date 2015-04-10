@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-
+    <hr>
     <div class="container-narrow">
         <div ng-view></div>
     </div>
@@ -30,4 +30,9 @@
     <%= javascript_include_tag "application" %>
 
   </body>
+  <hr>
+  <footer>
+    <a class="btn btn-primary" ng-click="logout()">Log Out</a>
+
+  </footer>
 </html>

@@ -22,9 +22,15 @@ class Api::V1::IngredientsController < Api::V1::BaseController
   end
 
   def create
-    @ingredient = Ingredient.create(ingredient_params)
-    @ingredient.save
-    respond_with(@ingredient)
+    # @ingredient = Ingredient.create(ingredient_params)
+    # @ingredient.save
+    # respond_with(@ingredient)
+    @ingredient = Ingredient.new(note_params)
+    if @ingredient.save
+      render @ingredient, as: :json
+    else
+      render :new
+    end
   end
 
   def destroy

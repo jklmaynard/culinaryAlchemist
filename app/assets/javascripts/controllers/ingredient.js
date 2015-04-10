@@ -1,10 +1,8 @@
-function IngredientCtrl($scope, Session, Ingredients) {"use strict";
+// function IngredientCtrl($scope, Session, Ingredients) {"use strict";
 
-  $scope.user = Session.requestCurrentUser();
-  $scope.ingredients = Ingredients.index();
+  // $scope.user = Session.requestCurrentUser();
 
-  $scope.logout = function() {
-    Session.logout();
-  };
+angular.module('culinaryAlchemist').controller('IngredientCtrl', function IngredientCtrl($scope, Ingredient) {
+  $scope.ingredients = Ingredient.index();
 
-}
+});

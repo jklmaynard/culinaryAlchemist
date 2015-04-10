@@ -13,48 +13,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require angular-resource
 //= require main
 //= require-rails-templates
 //= require_tree .
 //= require jquery.min
 //= require services/sessionService
+//= require services/noteService
 //= require services/ingredientService
 //= require services/recipeService
 //= require controllers/app
+//= require controllers/ingredient
 //= require controllers/recipe
 //= require controllers/users
-//= require controllers/ingredient
-
-
-angular.module('culinaryAlchemist', ['sessionService', 'recipeService', 'ingredientService'])
-  .config(['$httpProvider', function($httpProvider){
-        $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
-
-        var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
-            function success(response) {
-                return response
-            };
-
-            function error(response) {
-                if (response.status == 401) {
-                    $rootScope.$broadcast('event:unauthorized');
-                    $location.path('/users/login');
-                    return response;
-                };
-                return $q.reject(response);
-            };
-
-            return function(promise) {
-                return promise.then(success, error);
-            };
-        }];
-        $httpProvider.interceptors.push(interceptor);
-  }])
-  .config(['$routeProvider', function($routeProvider){
-    $routeProvider
-      .when('/', {templateUrl:'/home/index.html'})
-      .when('/ingredients', {templateUrl:'/ingredient/index.html', controller:IngredientCtrl})
-      .when('/recipe', {templateUrl:'/recipe/index.html', controller:RecipeCtrl})
-      .when('/users/sign_in', {templateUrl:'/users/login.html', controller:UsersCtrl})
-      .when('/users/sign_up', {templateUrl:'/users/register.html', controller:UsersCtrl});
-  }]);
+//= require controllers/note

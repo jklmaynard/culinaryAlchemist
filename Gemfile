@@ -12,6 +12,8 @@ gem 'devise'
 gem 'angular-rails-templates'
 gem 'pivotal_git_scripts'
 gem 'bootstrap-sass', '~> 3.3.4.1'
+gem 'angular_rails_csrf'
+
 
 group :development, :test do
   gem 'byebug'
