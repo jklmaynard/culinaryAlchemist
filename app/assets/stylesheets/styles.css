@@ -24,6 +24,12 @@ h6 {
   font-family: Times, Helvetica;
 }
 
+p {
+  color: white;
+  text-weight: bold;
+
+}
+
 .navbar-content {
   float: right;
   padding-bottom: 20px;
